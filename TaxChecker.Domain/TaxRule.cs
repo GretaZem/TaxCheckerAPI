@@ -9,9 +9,9 @@
         public DateTime ValidFrom { get; private set; }
         public DateTime ValidTo { get; private set; }
 
-        public TaxRule(int cityId, TaxRuleType type, decimal taxRate, DateTime validFrom, DateTime validTo)
+        public TaxRule(int cityId, TaxRuleType type, decimal rate, DateTime validFrom, DateTime validTo)
         {
-            if (taxRate <= 0)
+            if (rate <= 0)
                 throw new ArgumentException("Tax rate must be positive.");
 
             if (validFrom > validTo)
@@ -19,7 +19,7 @@
 
             CityId = cityId;
             Type = type;
-            Rate = taxRate;
+            Rate = rate;
             ValidFrom = validFrom;
             ValidTo = validTo;
         }

@@ -4,7 +4,7 @@ using TaxChecker.Domain;
 
 namespace TaxChecker.Infrastructure.Data.Configurations;
 
-public class TaxRuleConfiguration : IEntityTypeConfiguration<TaxRule>
+internal class TaxRuleConfiguration : IEntityTypeConfiguration<TaxRule>
 {
     public void Configure(EntityTypeBuilder<TaxRule> builder)
     {
@@ -20,8 +20,13 @@ public class TaxRuleConfiguration : IEntityTypeConfiguration<TaxRule>
             .HasColumnType("numeric(10,2)")
             .IsRequired();
 
-        builder.Property(t => t.ValidFrom).IsRequired();
-        builder.Property(t => t.ValidTo).IsRequired();
+        builder.Property(t => t.ValidFrom)
+            .HasColumnType("timestamp without time zone")
+            .IsRequired();
+
+        builder.Property(t => t.ValidTo)
+            .HasColumnType("timestamp without time zone")
+            .IsRequired();
 
         // Relations
         builder.HasOne<City>()

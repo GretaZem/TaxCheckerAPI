@@ -1,3 +1,6 @@
 <Solution>
   <Project Path="TaxChecker.API/TaxChecker.API.csproj" />
+  <Project Path="TaxChecker.Application/TaxChecker.Application.csproj" />
+  <Project Path="TaxChecker.Domain/TaxChecker.Domain.csproj" />
+  <Project Path="TaxChecker.Infrastructure/TaxChecker.Infrastructure.csproj" />
 </Solution>

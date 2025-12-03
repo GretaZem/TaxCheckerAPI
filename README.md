@@ -7,3 +7,7 @@ Though more familiar with the legacy pattern Program.cs + Startup.cs, using newe
 
 ### Domain: Value Objects Not Used
 Value Objects (e.g., `DateRange`, `TaxRate`, `CityName`) were not used given the small scope
+
+### Database Init in Startup
+Database bootstrap logic is inside Program.cs to make app init flow easier to follow. 
+Could later be moved into the Infrastructure layer to simplify Program.cs.
