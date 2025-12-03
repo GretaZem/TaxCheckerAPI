@@ -1,4 +1,4 @@
-﻿namespace TaxChecker.Infrastructure
+﻿namespace TaxChecker.Domain
 {
     public class TaxRule
     {
