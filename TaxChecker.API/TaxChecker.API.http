@@ -1,6 +1,0 @@
-@TaxChecker.API_HostAddress = http://localhost:5009
-
-GET {{TaxChecker.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

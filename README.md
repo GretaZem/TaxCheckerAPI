@@ -11,3 +11,6 @@ Value Objects (e.g., `DateRange`, `TaxRate`, `CityName`) were not used given the
 ### Database Init in Startup
 Database bootstrap logic is inside Program.cs to make app init flow easier to follow. 
 Could later be moved into the Infrastructure layer to simplify Program.cs.
+
+### Removed https
+Don't need TLS, avoids cert prompts.
