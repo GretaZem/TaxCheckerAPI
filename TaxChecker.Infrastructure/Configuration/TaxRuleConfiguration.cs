@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TaxChecker.Domain;
 
-namespace TaxChecker.Infrastructure.Data.Configurations;
+namespace TaxChecker.Infrastructure.Configuration;
 
 internal class TaxRuleConfiguration : IEntityTypeConfiguration<TaxRule>
 {

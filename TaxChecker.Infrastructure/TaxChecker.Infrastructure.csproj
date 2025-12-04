@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TaxChecker.Application\TaxChecker.Application.csproj" />
     <ProjectReference Include="..\TaxChecker.Domain\TaxChecker.Domain.csproj" />
   </ItemGroup>
 

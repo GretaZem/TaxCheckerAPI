@@ -1,6 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using TaxChecker.Application.Cities;
+using TaxChecker.Application.Taxes;
 using TaxChecker.Infrastructure.Data;
+using TaxChecker.Infrastructure.Repositories;
 
 namespace TaxChecker.Infrastructure.DependencyInjection;
 
@@ -14,6 +17,9 @@ public static class InfrastructureServiceCollectionExtensions
         {
             options.UseNpgsql(connectionString);
         });
+
+        services.AddScoped<ICityRepository, CityRepository>();
+        services.AddScoped<ITaxRuleRepository, TaxRuleRepository>();
 
         return services;
     }
