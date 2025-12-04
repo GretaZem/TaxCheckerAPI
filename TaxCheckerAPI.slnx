@@ -5,4 +5,5 @@
   </Folder>
   <Project Path="TaxChecker.API/TaxChecker.API.csproj" />
   <Project Path="TaxChecker.Infrastructure/TaxChecker.Infrastructure.csproj" />
+  <Project Path="TaxChecker.UnitTests/TaxChecker.UnitTests.csproj" Id="7e22ef91-82c1-4732-afe3-f8b0323bee49" />
 </Solution>
