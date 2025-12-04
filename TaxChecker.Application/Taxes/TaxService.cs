@@ -21,7 +21,7 @@ public sealed class TaxService : ITaxService
         CancellationToken ct = default)
     {
         // Assumption: if city doesn't exist, null is returned; controller can turn this into 404.
-        var city = await _cities.GetByIdAsync(cityId, ct); 
+        var city = await _cities.GetByIdAsync(cityId, ct);
         if (city is null) return null;
 
         var rules = await _taxRules.GetRulesForCityOnDateAsync(cityId, date, ct);

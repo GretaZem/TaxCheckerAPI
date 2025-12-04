@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TaxChecker.API.Models;
 using TaxChecker.Application.Taxes;
 
@@ -21,7 +22,7 @@ public sealed class TaxesController : ControllerBase
     [HttpGet("rate")]
     public async Task<IActionResult> GetRate(
         int cityId,
-        [FromQuery] DateOnly date,  
+        [FromQuery] DateOnly date,
         CancellationToken ct)
     {
         var result = await _taxService.GetTaxRateAsync(cityId, date, ct);
@@ -75,7 +76,7 @@ public sealed class TaxesController : ControllerBase
     /// Create a new tax rule for the specified city. ADMIN ONLY.
     /// </summary>
     [HttpPost]
-    //[AdminOnly]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Create(
         int cityId,
         [FromBody] CreateTaxRuleRequest request,
@@ -115,7 +116,7 @@ public sealed class TaxesController : ControllerBase
     /// Update an existing tax rule. ADMIN ONLY.
     /// </summary>
     [HttpPut("{id:int}")]
-    //[AdminOnly]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Update(
         int cityId,
         int id,
@@ -149,7 +150,7 @@ public sealed class TaxesController : ControllerBase
     /// Delete an existing tax rule. ADMIN ONLY.
     /// </summary>
     [HttpDelete("{id:int}")]
-    //[AdminOnly]
+    [Authorize(Policy = "AdminOnly")]
     public async Task<IActionResult> Delete(
         int cityId,
         int id,
