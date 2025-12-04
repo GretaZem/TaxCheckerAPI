@@ -1,3 +1,4 @@
+using TaxChecker.Application.DependencyInjection;
 using TaxChecker.Infrastructure.Database;
 using TaxChecker.Infrastructure.DependencyInjection;
 
@@ -8,6 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 DatabaseInitializer.EnsureDatabase(connectionString);
 builder.Services.AddInfrastructure(connectionString);
 
+builder.Services.AddApplication();
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 

@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using TaxChecker.Infrastructure.Data;
+using TaxChecker.Application.Cities;
 
 namespace TaxChecker.API.Controllers;
 
@@ -8,20 +7,17 @@ namespace TaxChecker.API.Controllers;
 [Route("api/cities")]
 public class CitiesController : ControllerBase
 {
-    private readonly AppDbContext _db;
+    private readonly ICityService _service;
 
-    public CitiesController(AppDbContext db)
+    public CitiesController(ICityService service)
     {
-        _db = db;
+        _service = service;
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetCities()
+    public async Task<IActionResult> GetCities(CancellationToken ct)
     {
-        var cities = await _db.Cities
-            .OrderBy(c => c.Name)
-            .ToListAsync();
-
+        var cities = await _service.GetAllAsync(ct);
         return Ok(cities);
     }
 }

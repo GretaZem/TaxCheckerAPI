@@ -1,5 +1,5 @@
 #Tax Checker API
-Application which allows users tosee taxes applied in their city, on any given day.
+Application which allows users to see taxes applied in their city, on any given day.
 
 ##Design Decisions:
 ### Minimal Hosting Model

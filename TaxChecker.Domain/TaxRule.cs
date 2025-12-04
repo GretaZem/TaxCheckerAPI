@@ -23,5 +23,18 @@
             ValidFrom = validFrom;
             ValidTo = validTo;
         }
+
+        public void Update(decimal rate, DateTime validFrom, DateTime validTo)
+        {
+            if (rate <= 0)
+                throw new ArgumentException("Rate must be greater than zero.");
+
+            if (validTo < validFrom)
+                throw new ArgumentException("ValidTo cannot be earlier than ValidFrom.");
+
+            Rate = rate;
+            ValidFrom = validFrom;
+            ValidTo = validTo;
+        }
     }
 }
