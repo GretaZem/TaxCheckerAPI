@@ -13,7 +13,7 @@ The API supports adding, updating, deleting, and querying tax rules, plus calcul
 
 ---
 
-##How to Run the API locally
+## How to Run the API locally
 
 ### **Prerequisites**
 - Docker Desktop (running)
@@ -63,16 +63,16 @@ Planned but not finished:
 ### Bugs
 Some tests are failing
 
-### Nicer Swagger Documentation
-Would add:
-* Example providers
-* More detailed summaries with return/error examples
-
 ### Code Quality Check
 Most code in repeating elements such as tests/controllers was written quickly or AI-generated.
 Need to look through in more detail:
 * Unit test suite (not full coverage/not passing/double-check logic)
 * Controllers (naming and endpoints not looked through yet)
+
+### Nicer Swagger Documentation
+Would add:
+* Example providers
+* More detailed summaries with return/error examples
 
 ---
 
