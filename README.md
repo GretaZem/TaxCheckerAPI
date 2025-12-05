@@ -13,14 +13,14 @@ The API supports adding, updating, deleting, and querying tax rules, plus calcul
 
 ---
 
-###How to Run the API locally
+##How to Run the API locally
 
-#### **Prerequisites**
+### **Prerequisites**
 - Docker Desktop (running)
 - .NET SDK 10 installed
 - IDE of your choice (VS, Rider, VS Code)
 
-#### **Launch**
+### **Launch**
 Using command line:
 
 ```sh
@@ -35,7 +35,7 @@ On launch, the app will automatically:
 * Insert initial seed data
 * Open **Swagger UI** in your browser
 
-#### **Try It in Swagger**
+### **Try It in Swagger**
 
 Click *Authorize* → enter:
 ```
@@ -49,11 +49,11 @@ depending on which endpoints you want to hit.
 
 ---
 
-# TODO / Known Issues
+## TODO / Known Issues
 
 Features and fixes that were not completed due to time limitations.
 
-### Error Handling=
+### Error Handling
 Planned but not finished:
 
 * Global exception-handling middleware
@@ -74,6 +74,8 @@ Need to look through in more detail:
 * Unit test suite (not full coverage/not passing/double-check logic)
 * Controllers (naming and endpoints not looked through yet)
 
+---
+
 ## What IS Working
 * PostgreSQL Docker setup
 * EF Core migrations + automatic seeding
@@ -83,7 +85,7 @@ Need to look through in more detail:
 
 ---
 
-# Design Decision
+## Design Decision
 ### Minimal Hosting Model
 Though more familiar with the legacy pattern Program.cs + Startup.cs, I'm using newer version for less boilerplate
 
@@ -97,6 +99,11 @@ Should later be moved into the Infrastructure layer to simplify Program.cs.
 ### Removed https
 Don't need TLS, avoids cert prompts.
 
-# Requirement Assumptions
+### No Result Models
+Would use in larger scope to handle known/expected exceptions.
+
+---
+
+## Requirement Assumptions
 ### No auth header
 Assuming no header (or anything other than 'User' or 'Admin') is not authorized in the application.
